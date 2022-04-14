@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Player
 {
     private String name;
+    public Scanner kb = new Scanner(System.in);
     private int health;
     private int currency;
     private int mp;
@@ -34,6 +35,7 @@ public class Player
                 "\nMP: " + mp +
                 "\nStamina: " + stamina);
     }
+
     public int battleCounter()
     {
         return 0;
