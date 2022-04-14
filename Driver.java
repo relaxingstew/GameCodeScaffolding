@@ -14,8 +14,9 @@ public class Driver
         System.out.println("A strange, ornate letter sits atop your lopsided, peeling table. Very strange, considering you live" +
                 "alone. ...And you locked the door before you left this morning. You should read it." +
                 "\n'TO WHOM IT MAY CONCERN," +
-                "\n[come back]");
-
+                "\nGreetings, fated traveller. I am Isdith, leader of the resistance.");
+        //incomplete
+    }
     public void battle(Player player, Enemy enemy)
     {
 
