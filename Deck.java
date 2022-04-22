@@ -1,30 +1,35 @@
+import java.util.ArrayList;
+
 public class Deck extends Player
 {
-    private Card[] cards;
+    private ArrayList<Card> cards;
+    private boolean[] dealBool;
+    private int deckSize;
+    private int deckCap = 30;
 
-    public Card add(Card card)
+    public Deck()
     {
-        return card;
+        cards = new ArrayList<Card>();
+        deckSize = cards.size();
+        dealBool = new boolean[deckSize];
+        this.deckCap = deckCap;
     }
 
-    public void removeCard()
+    public void addCard(Card card)
     {
-
+        cards.add(card);
     }
 
-    public void playCard()
+    public void removeCard(Card card)
     {
-
+        cards.remove(card);
     }
 
+    public int getDeckSize() {
+        return deckSize;
+    }
 
-    //Getters and setters
-
-    public Card[] getCards() {
+    public ArrayList<Card> getCards() {
         return cards;
-    }
-
-    public void setCards(Card[] cards) {
-        this.cards = cards;
     }
 }
