@@ -1,16 +1,16 @@
 public class Rest
 {
     private int restoreHealth;
-    private int restorempAmount;
+    private int restoreMP;
 
     public void restoreHealth()
     {
-
+        restoreHealth = 75;
     }
 
     public void restoreMP()
     {
-
+        restoreMP = 20;
     }
 
 
@@ -20,15 +20,15 @@ public class Rest
         return restoreHealth;
     }
 
-    public int getRestorempAmount() {
-        return restorempAmount;
+    public int getRestoreMP() {
+        return restoreMP;
     }
 
     public void setRestoreHealth(int restoreHealth) {
         this.restoreHealth = restoreHealth;
     }
 
-    public void setRestorempAmount(int restorempAmount) {
-        this.restorempAmount = restorempAmount;
+    public void setRestoreMP(int restoreMP) {
+        this.restoreMP = restoreMP;
     }
 }
