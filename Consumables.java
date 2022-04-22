@@ -1,52 +1,52 @@
-public class Consumables extends Inventory
+import java.util.ArrayList;
+
+public class Consumable extends Inventory
 {
-    private int consumablesStrength;
+    private static String name;
     private String description;
-    private int buffHealth;
-    private int buffMp;
-
-    public void restoreHealth()
+    private int healthEffect;
+    private int mpEffect;
+    public Consumable(String name, String description, int healthEffect, int mpEffect,
+                      ArrayList<Trinket> Trinkets, ArrayList<Consumable> Consumables)
     {
-
+        super(Trinkets, Consumables);
+        this.name = name;
+        this.description = description;
+        this.healthEffect = healthEffect;
+        this.mpEffect = mpEffect;
     }
-
-    public void restoreMp()
+// Getters/Setters
+    public void setName(String name)
     {
-
+        this.name = name;
     }
-
-
-    //Getters and setters
-
-    public int getConsumablesStrength() {
-        return consumablesStrength;
+    public static String getName()
+    {
+        return name;
     }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public int getBuffHealth() {
-        return buffHealth;
-    }
-
-    public int getBuffMp() {
-        return buffMp;
-    }
-
-    public void setConsumablesStrength(int consumablesStrength) {
-        this.consumablesStrength = consumablesStrength;
-    }
-
-    public void setDescription(String description) {
+    public void setDescription(String description)
+    {
         this.description = description;
     }
-
-    public void setBuffHealth(int buffHealth) {
-        this.buffHealth = buffHealth;
+    public String getDescription()
+    {
+        return description;
+    }
+    public void setHealthEffect(int healthEffect)
+    {
+        this.healthEffect = healthEffect;
     }
 
-    public void setBuffMp(int buffMp) {
-        this.buffMp = buffMp;
+    public int getHealthEffect()
+    {
+        return healthEffect;
+    }
+    public void setMpEffect(int mpEffect)
+    {
+        this.mpEffect = mpEffect;
+    }
+    public int getMpEffect()
+    {
+        return mpEffect;
     }
 }
