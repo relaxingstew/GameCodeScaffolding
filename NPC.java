@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class NPC extends Player
@@ -17,6 +18,8 @@ public class NPC extends Player
             System.out.println("");
         }
         if(input == 2){
+            Random rand = new Random();
+
             System.out.println("");
         }
         if(input == 3){
@@ -55,6 +58,25 @@ public class NPC extends Player
         }
         if(input == 2){
             System.out.println("Villager: You sure?");
+            System.out.println("""
+
+                1. I'm on an important mission.
+                2. VERY sure.
+                3. [Ignore]""");
+            input = kb.nextInt();
+            if(input == 1){
+                System.out.println("Villager: Doesn't sound important. You're no fun.");
+                System.out.println("The villager left, bored.");
+            }
+            if(input == 2){
+                System.out.println("Villager: Well, I got your wallet right here, and you got plenty.");
+                System.out.println("The villager robbed you! Money lost...");
+                //add amount of money later
+            }
+            if(input == 3){
+                System.out.println("Fine. Be that way.");
+                System.out.println("The villager left, grumbling.");
+            }
         }
         if(input == 3){
             System.out.println("Villager: Hey! I was talking to you!");
@@ -63,6 +85,26 @@ public class NPC extends Player
                     1. No money. Sorry.
                     2. [Ignore]""");
             input = kb.nextInt();
+            if(input == 1){
+                System.out.println("Villager: Are you that hero? That one supposed to save us all? You don't look like much.");
+                System.out.println("""
+
+                    1. Yeah. Maybe.
+                    2. [Ignore]""");
+                    input = kb.nextInt();
+                    if(input == 1){
+                        System.out.println("Villager: Some hero you are.");
+                        System.out.println("Villager left, disappointed.");
+                    }
+                    if(input == 2) {
+                        System.out.println("Villager: Some hero you are.");
+                        System.out.println("Villager left, disappointed.");
+                    }
+            }
+            if(input == 2){
+                System.out.println("Villager: I'll get you one day. Just wait and see.");
+                System.out.println("Villager left, angry.");
+            }
         }
     }
 
@@ -78,7 +120,13 @@ public class NPC extends Player
     }
 
     public void setNpcAlignment(boolean npcAlignment) {
-        this.npcAlignment = npcAlignment;
+        Random align = new Random();
+        this.npcAlignment = align.nextBoolean();
+        getNPCAlignment();
+        if(npcAlignment == true){
+            goodNPCInteraction();
+        }
+        else badNPCInteraction();
     }
 
     public void setNpcStrength(int npcStrength) {
