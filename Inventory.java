@@ -1,30 +1,55 @@
-public class Inventory extends Player
+import java.util.ArrayList;
+public class Inventory
 {
-    private Trinkets[] trinkets;
-
-    public void useItem()
+    private ArrayList<Trinket> Trinkets;
+    private ArrayList<Consumable> Consumables;
+    public Inventory(ArrayList<Trinket> Trinkets, ArrayList<Consumable> Consumables)
     {
-
+        this.Trinkets = Trinkets;
+        this.Trinkets = Trinkets;
     }
 
-    public void discardItem()
+    public void viewInventory(int Currency, String pName)
     {
-
+        System.out.println("--- " + pName + " Inventory---");
+        for(Trinket i : Trinkets)
+        {
+            System.out.println(Trinket.getTrinketName());
+        }
+        for(Consumable i : Consumables)
+        {
+            System.out.println(Consumable.getName());
+        }
+        System.out.println("Wallet: " + Currency + "Gold Coins");
     }
 
-    public String listContents()
+    public void discardItem(int type, int index) {
+        if (type == 1) {
+            Trinkets.remove(index - 1);
+        } else {
+            Consumables.remove(index - 1);
+        }
+    }
+    public int useConsumable(Consumable use, int currentHealth, int currentMp) {
+        if(use.getHealthEffect() > 0) {
+            currentHealth = currentHealth+ use.getHealthEffect();
+            return currentHealth;
+        }
+        else {
+            currentMp = currentMp + use.getMpEffect();
+            return currentMp;
+        }
+    }
+    public ArrayList<Trinket> getTrinkets()
     {
-        return "";
+        return Trinkets;
+    }
+
+    public void setTrinkets(ArrayList<Trinket> Trinkets)
+        {
+            this.Trinkets = Trinkets;
+        }
     }
 
 
-    //Getters and setters
 
-    public Trinkets[] getTrinkets() {
-        return trinkets;
-    }
-
-    public void setTrinkets(Trinkets[] trinkets) {
-        this.trinkets = trinkets;
-    }
-}
