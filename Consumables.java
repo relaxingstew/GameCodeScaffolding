@@ -2,11 +2,12 @@ import java.util.ArrayList;
 
 public class Consumable extends Inventory
 {
-    private static String name;
+    public String name;
     private String description;
     private int healthEffect;
     private int mpEffect;
-    public Consumable(String name, String description, int healthEffect, int mpEffect,
+    private int price;
+    public Consumable(String name, String description, int healthEffect, int mpEffect, int price,
                       ArrayList<Trinket> Trinkets, ArrayList<Consumable> Consumables)
     {
         super(Trinkets, Consumables);
@@ -14,13 +15,14 @@ public class Consumable extends Inventory
         this.description = description;
         this.healthEffect = healthEffect;
         this.mpEffect = mpEffect;
+        this.price = price;
     }
 // Getters/Setters
     public void setName(String name)
     {
         this.name = name;
     }
-    public static String getName()
+    public String getName()
     {
         return name;
     }
@@ -49,4 +51,6 @@ public class Consumable extends Inventory
     {
         return mpEffect;
     }
+    public void setprice(int price) {this.price = price;}
+    public int getPrice(){return price;}
 }
