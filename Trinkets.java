@@ -1,21 +1,21 @@
 import java.util.ArrayList;
 
-public class Trinket extends Inventory
+public class Trinket
 {
     private String description;
-    private static String trinketName;
+    private String trinketName;
     private int buffHealth;
     private int buffMp;
     private int buffStamina;
-    public Trinket(String description, String trinketName, int buffStamina, int buffHealth, int buggMp,
-                   ArrayList<Trinket> Trinkets, ArrayList<Consumable> Consumables)
+    private int price;
+    public Trinket(String description, String trinketName, int buffStamina, int buffHealth, int buffMp, int price)
     {
-        super(Trinkets, Consumables);
         this.description = description;
         this.trinketName = trinketName;
         this.buffStamina = buffStamina ;
         this.buffHealth = buffHealth ;
         this.buffMp = buffMp;
+        this.price = price;
     }
     public int increaseHealth(int currentHealth)
     {
@@ -39,7 +39,6 @@ public class Trinket extends Inventory
         return description;
     }
 
-
     public int getBuffHealth() {
         return buffHealth;
     }
@@ -52,10 +51,12 @@ public class Trinket extends Inventory
         return buffStamina;
     }
 
-    public static String getTrinketName()
+    public String getTrinketName()
     {
         return trinketName;
     }
+
+    public int getPrice() {return price;}
 
     public void setDescription(String description) {
         this.description = description;
@@ -76,4 +77,6 @@ public class Trinket extends Inventory
     public void setTrinketName(String trinketName) {
         this.trinketName = trinketName;
     }
+
+    public void setPrice (int price) {this.price = price;}
 }
