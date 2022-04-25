@@ -6,21 +6,23 @@ public class Inventory
     public Inventory(ArrayList<Trinket> Trinkets, ArrayList<Consumable> Consumables)
     {
         this.Trinkets = Trinkets;
-        this.Trinkets = Trinkets;
+        this.Consumables = Consumables;
     }
 
-    public void viewInventory(int Currency, String pName)
+    public void viewInventory(int Currency, int health, int MP, String pName)
     {
-        System.out.println("--- " + pName + " Inventory---");
+        System.out.println("---" + pName + " Inventory---");
         for(Trinket i : Trinkets)
         {
-            System.out.println(Trinket.getTrinketName());
+            //System.out.println(Trinket.getTrinketName());
         }
         for(Consumable i : Consumables)
         {
-            System.out.println(Consumable.getName());
+            System.out.println(i.getName());
         }
-        System.out.println("Wallet: " + Currency + "Gold Coins");
+        System.out.println("Wallet: " + Currency + " Gold Coins");
+        System.out.println("Health: " + health + " HP");
+        System.out.println("MP: " + MP + " MP");
     }
 
     public void discardItem(int type, int index) {
@@ -50,6 +52,3 @@ public class Inventory
             this.Trinkets = Trinkets;
         }
     }
-
-
-
