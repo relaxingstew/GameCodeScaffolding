@@ -40,6 +40,8 @@ public class NPC extends Player
         input = kb.nextInt();
         if(input == 1){
             System.out.println("You lost 1 coin.)");
+                        currentCurrency = currentCurrency -1;
+
             System.out.println("Villager: That's funny. Got any more?");
             System.out.println("""
 
@@ -49,10 +51,12 @@ public class NPC extends Player
             if(input == 1){
                 System.out.println("Villager: Well, I got your wallet right here, and you got plenty.");
                 System.out.println("The villager robbed you! Money lost...");
-                //add amount of money later
+                                currentCurrency = currentCurrency - 50;
+
             }
             if(input == 2){
                 System.out.println("(You lost 1 coin.)");
+                                currentCurrency = currentCurrency -1;
                 System.out.println("Villager: Yeah, all right. Very, VERY funny.");
                 System.out.println("The villager left, grumbling.");
             }
@@ -107,6 +111,7 @@ public class NPC extends Player
                 System.out.println("Villager left, angry.");
             }
         }
+                return currentCurrency;
     }
 
 
